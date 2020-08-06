@@ -1,0 +1,7 @@
+<div (document:mousemove)=screen.mouseMove($event) (document:mouseup)=screen.mouseUp($event)>
+  <app-aop-background [colorManagerService]="colorManagerService"></app-aop-background>
+  <app-aop-screen [colorManagerService]="colorManagerService" (mouseMove)=mouseEvent #screen></app-aop-screen>
+  <app-aop-color-selection [colorManagerService]="colorManagerService"></app-aop-color-selection>
+  <app-aop-pattern [colorManagerService]="colorManagerService"></app-aop-pattern>
+</div>
+<div id="filter"></div>

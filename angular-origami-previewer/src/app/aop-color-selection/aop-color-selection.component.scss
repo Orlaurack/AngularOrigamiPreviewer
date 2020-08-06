@@ -1,0 +1,29 @@
+:host {
+  text-align: center;
+  margin: 0 60px 20px 56px;
+  padding: 0px 80px 0px 10px;
+  background-image: url("../../assets/paper_texture.png") !important;
+  background-size: 50% !important;
+  background-color:white !important;
+  box-shadow: 0px 0px 10px #00000088 !important;
+
+  div {
+    background-image: url("../../assets/paper_texture.png") !important;
+    background-size: cover !important;
+    display: inline-block;
+    box-shadow: 0px 0px 5px #00000088 !important;
+    width:100px;
+    height:100px;
+    padding:0;
+    margin: 20px -70px 20px 0px;
+    user-select: none;
+    border:none;
+    position: relative !important;
+    transition: transform 0.2s;
+  }
+
+  div.active{
+    transform: translate(0, 25px) !important;
+    transition: transform 0.2s;
+  }
+}

@@ -1,0 +1,1 @@
+<div *ngFor="let square of Squares; let i = index" [style.background-color]="colorManagerService.inputColors[i%colorManagerService.inputColors.length].color" [style.left]="'calc('+square.x+'% - 50px)'" [style.top]="'calc('+square.y+'% - 50px)'">

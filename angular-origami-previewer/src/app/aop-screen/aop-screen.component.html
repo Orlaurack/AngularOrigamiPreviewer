@@ -1,0 +1,9 @@
+<!--(mouseup)="mouseUp($event)" (mousemove)="mouseMove($event)"-->
+<svg (mousedown)="mouseDown()"  viewBox="0 0 500 500" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+  <path *ngFor="let path of paths"
+    [attr.d]="path.d"
+    [attr.stroke]="path.stroke"
+    [attr.stroke-width]="path.stroke_width"
+    [attr.fill]="path.fill"
+    [attr.data-z]="path.data_z" />
+</svg>

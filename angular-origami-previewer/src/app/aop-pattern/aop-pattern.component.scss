@@ -1,0 +1,29 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  mat-radio-group{
+    background-image: url("../../assets/paper_texture.png");
+    background-size: cover;
+    background-color: white;
+    padding:10px 20px;
+    box-shadow: 0px 0px 10px #00000088;
+    display: inline-table;
+    width: max-content;
+    mat-radio-button {
+
+      display: flex;
+      flex-direction: row;
+      margin: 5px auto;
+      width: auto;
+      text-align: center;
+
+    }
+    b{
+      display: block;
+      margin: 10px;
+      text-align: center;
+    }
+  }
+
+}

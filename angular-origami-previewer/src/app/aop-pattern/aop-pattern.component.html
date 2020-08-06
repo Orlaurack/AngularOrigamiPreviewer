@@ -1,0 +1,12 @@
+<mat-radio-group (change)="changePattern($event)">
+  <b>Motif</b>
+  <mat-radio-button *ngFor="let l of colorManagerService.LAYOUTS | keyvalue" id="layout_{{l.key}}" colortype="radio" name="layouts" [value]="l.key" [color]="colorManagerService.validLayouts.includes(l.key)?colorValid:colorInvalid" [checked]="colorManagerService.layout===l.key">
+  <span [style.color]="colorManagerService.validLayouts.includes(l.key)?'#008800':'#bbbbbb'">{{l.value}}</span>
+  </mat-radio-button>
+</mat-radio-group>
+<mat-radio-group (change)="changeNumber($event)">
+  <b>Nombre de feuilles</b>
+  <mat-radio-button *ngFor="let n of colorManagerService.NUMBERS"  id="number_{{n}}" type="radio" name="numbers" [value]="n" [color]="colorManagerService.validNumbers.includes(n)?colorValid:colorInvalid" [checked]="colorManagerService.number===n">
+    <span [style.color]="colorManagerService.validNumbers.includes(n)?'#008800':'#bbbbbb'">{{n}}</span>
+  </mat-radio-button>
+</mat-radio-group>

@@ -1,0 +1,28 @@
+
+:host{
+  position: fixed;
+  background-color: #fff;
+  background-image: url('../../assets/paper_texture.png');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 5%;
+  width:160%;
+  right:0;
+  left:-30%;
+  top:0;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+  transform: translateY(-30%) perspective(500px) rotateX(45deg);
+  >div{
+    background-image: url("../../assets/paper_texture.png");
+    background-size: cover;
+    width:100px;
+    height:100px;
+    box-shadow: 0px 0px 10px #00000088;
+    position: fixed;
+    top:200px;
+    pointer-events: none;
+  }
+
+}
