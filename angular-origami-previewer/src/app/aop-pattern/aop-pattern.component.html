@@ -1,7 +1,7 @@
 <mat-radio-group (change)="changePattern($event)">
   <b>Motif</b>
-  <mat-radio-button *ngFor="let l of colorManagerService.LAYOUTS | keyvalue" id="layout_{{l.key}}" colortype="radio" name="layouts" [value]="l.key" [color]="colorManagerService.validLayouts.includes(l.key)?colorValid:colorInvalid" [checked]="colorManagerService.layout===l.key">
-  <span [style.color]="colorManagerService.validLayouts.includes(l.key)?'#008800':'#bbbbbb'">{{l.value}}</span>
+  <mat-radio-button *ngFor="let l of colorManagerService.LAYOUTS" id="layout_{{l.name}}" colortype="radio" name="layouts" [value]="l.name" [color]="colorManagerService.validLayouts.includes(l.name)?colorValid:colorInvalid" [checked]="colorManagerService.layout===l.name">
+  <span [style.color]="colorManagerService.validLayouts.includes(l.name)?'#008800':'#bbbbbb'">{{l.value}}</span>
   </mat-radio-button>
 </mat-radio-group>
 <mat-radio-group (change)="changeNumber($event)">

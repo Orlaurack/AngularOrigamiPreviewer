@@ -1,1 +1,8 @@
-<div *ngFor="let square of Squares; let i = index" [style.background-color]="colorManagerService.inputColors[i%colorManagerService.inputColors.length].color" [style.left]="'calc('+square.x+'% - 50px)'" [style.top]="'calc('+square.y+'% - 50px)'">
+<div id="parallax">
+  <div id="bk-square-container" [style.background-color]="colorManagerService.backgroundColor">
+    <div class="bk-square" *ngFor="let square of Squares; let i = index" [style.background-color]="colorManagerService.inputColors[i%colorManagerService.inputColors.length].color" [style.height]="square.s" [style.width]="square.s" [style.left]="square.x" [style.top]="square.y"></div>
+  </div>
+  <div id="content">
+    <ng-content ></ng-content>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { ColorManagerService } from './color-manager.service';
+import { SolidSettingsService } from './solid-settings.service';
 
 
 @Component({
@@ -17,10 +18,12 @@ export class AppComponent {
   showedColors: {color: string}[] = [];
   initialColors: {color: string}[] = [];
   colorManagerService: ColorManagerService;
+  solidSettings: SolidSettingsService;
 
   @Output() mouseMove = new EventEmitter<any>();
 
   constructor(){
+    this.solidSettings = new SolidSettingsService();
     this.colorManagerService = new ColorManagerService();
     this.storedColors = this.colorManagerService.storedColors;
     this.showedColors = this.colorManagerService.showedColors;

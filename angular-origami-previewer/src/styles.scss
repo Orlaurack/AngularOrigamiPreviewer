@@ -33,55 +33,14 @@ $angular-origami-previewer-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($angular-origami-previewer-theme);
 
+$shadow: 0px 0px 15px 0px #0006;
+$shadow-big: 0px 10px 30px 5px #0008;
+$shadow-color: 5px 0px 5px -2px #000,
+              -3px 0px 5px -2px #0008,
+              inset 30px -30px 20px -20px #0002;
 
 body{
   padding: 0;
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-/*
-h1,h2,h3,h4,h5,h6,p,span{
-  background-color: white;
-  border:0;
-  box-shadow: 0px 0px 10px #00000088;
-  padding:10px;
-  width: max-content;
-}*/
-.color-picker {
-  border:none !important;
-  background-color: #000 !important;
-  transform: translate(calc(50px - 50%)) !important;
-  margin-top: 25px;
-  .box{
-    color:#fff !important;
-    background-color: #000 !important;
-    div {
-      color:#fff !important;
-    }
-  }
-  .selected-color{
-    border:none !important;
-  }
-  .arrow.arrow-bottom{
-    left: calc(50% - 5px) !important;
-  }
-  input{
-    color: #fff !important;
-    background-color: #333 !important;
-    border:none !important;
-
-  }
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  div.type-policy{
-    background-image: url("assets/arrow.png");
-  }
-}
-
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

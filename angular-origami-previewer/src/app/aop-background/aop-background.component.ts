@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ColorManagerService } from '../color-manager.service';
 
 @Component({
@@ -7,17 +7,18 @@ import { ColorManagerService } from '../color-manager.service';
   styleUrls: ['./aop-background.component.scss']
 })
 
-
 export class AopBackgroundComponent implements OnInit {
-
-  Squares: {x: number, y: number}[] = [];
+  scrollTop: number;
+  Squares: {s: string, x: string, y: string}[] = [];
   @Input() colorManagerService: ColorManagerService;
 
+
   constructor(colorManagerService: ColorManagerService) {
+    this.scrollTop = document.scrollingElement.scrollTop;
     this.colorManagerService = colorManagerService;
     this.Squares = [];
-    for (let i = 0; i < 300; i++) {
-      this.Squares.push({x: this.rng(), y: this.rng()});
+    for (let i = 0; i < 1000; i++) {
+      this.Squares.push({s: '10vw', x: Math.round(Math.random() * 10) * 10 + 'vw', y: Math.round(Math.random() * 50) * 10 + 'vw'});
     }
   }
 
@@ -25,7 +26,7 @@ export class AopBackgroundComponent implements OnInit {
 
   }
 
-  rng(){
-    return Math.round(Math.random() * 100);
+  scroll(){
+    this.scrollTop = document.scrollingElement.scrollTop;
   }
 }

@@ -10,6 +10,7 @@ import { AopColorSelectionComponent } from './aop-color-selection/aop-color-sele
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { MatRadioModule } from '@angular/material/radio';
+import { AopSettingsComponent } from './aop-settings/aop-settings.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
     AopBackgroundComponent,
     AopPatternComponent,
     AopColorSelectionComponent,
+    AopSettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,8 @@ import { SolidService } from '../solid.service';
 import { RotationService } from '../rotation.service';
 import { Coordinate } from 'src/app/coordinate';
 import { ColorManagerService } from '../color-manager.service';
+import { SolidSettingsService } from '../solid-settings.service';
+
 
 @Component({
   selector: 'app-aop-screen',
@@ -23,12 +25,16 @@ export class AopScreenComponent implements OnInit {
   mouse: {x, y} = {x: 0, y: 0};
   fps: number = 1000 / 20;
   inertia = 0.96;
+  readonly second: number;
 
   @Input() colorManagerService: ColorManagerService;
+  @Input() solidSettings: SolidSettingsService;
 
-  constructor(colorManagerService: ColorManagerService) {
+  constructor(colorManagerService: ColorManagerService, solidSettings: SolidSettingsService) {
     this.colorManagerService = colorManagerService;
+    this.solidSettings = solidSettings;
     this.paths = [];
+    this.second = 1000;
    }
 
   ngOnInit(): void {
@@ -43,8 +49,10 @@ export class AopScreenComponent implements OnInit {
         this.mouse.x *= this.inertia;
         this.mouse.y *= this.inertia;
       }
+      this.mouse.x += this.solidSettings.rotation.x;
+      this.mouse.y += this.solidSettings.rotation.y;
       this.generateSVG(this.solid);
-    }, this.fps);
+    }, this.second / this.solidSettings.fps);
   }
 
 

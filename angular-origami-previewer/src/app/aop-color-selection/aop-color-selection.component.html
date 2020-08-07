@@ -1,1 +1,20 @@
-<div *ngFor="let color of colorManagerService.inputColors; let i = index" class="cp" (cpToggleChange)="removeFocusColor($event)" (click)="changeFocusedColor($event)" [cpPosition]="'bottom'" [style.background]="color.color" (colorPickerChange)="changeColor(i, $event)" [colorPicker]="color.color" [cpOutputFormat]="'hex'" [cpAlphaChannel]="'disabled'"></div>
+<div
+*ngFor="let color of colorManagerService.inputColors; let i = index"
+class="cp"
+
+[colorPicker]="color.color"
+[cpOutputFormat]="'hex'"
+[cpPosition]="'bottom'"
+[cpAddColorButton]="'true'"
+[cpAddColorButtonText]="'+'"
+[cpPresetColors]="Presets"
+[cpAlphaChannel]="'disabled'"
+[cpMaxPresetColorsLength]="'30'"
+[style.background]="color.color"
+
+(cpToggleChange)="removeFocusColor($event)"
+(click)="changeFocusedColor($event)"
+(colorPickerChange)="changeColor(i, $event)"
+(cpPresetColorsChange)="addPreset($event)">
+
+</div>

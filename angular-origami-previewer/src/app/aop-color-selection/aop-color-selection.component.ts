@@ -9,9 +9,12 @@ import { ColorManagerService } from '../color-manager.service';
 export class AopColorSelectionComponent {
 
   @Input() colorManagerService: ColorManagerService;
+  Presets: string[];
 
   constructor(colorManagerService: ColorManagerService) {
     this.colorManagerService = colorManagerService;
+    this.Presets = [];
+    this.Presets = this.colorManagerService.storedColors.map((color) => color.color);
   }
 
   changeFocusedColor(e: any){
@@ -33,5 +36,10 @@ export class AopColorSelectionComponent {
   changeColor(index: number, event: string){
     this.colorManagerService.inputColors[index].color = event;
     this.colorManagerService.update();
+  }
+
+  addPreset(event){
+
+    this.Presets = event;
   }
 }

@@ -1,7 +1,9 @@
-<div (document:mousemove)=screen.mouseMove($event) (document:mouseup)=screen.mouseUp($event)>
-  <app-aop-background [colorManagerService]="colorManagerService"></app-aop-background>
-  <app-aop-screen [colorManagerService]="colorManagerService" (mouseMove)=mouseEvent #screen></app-aop-screen>
-  <app-aop-color-selection [colorManagerService]="colorManagerService"></app-aop-color-selection>
-  <app-aop-pattern [colorManagerService]="colorManagerService"></app-aop-pattern>
-</div>
-<div id="filter"></div>
+<app-aop-background [colorManagerService]="colorManagerService" #background>
+  <div (document:mousemove)=screen.mouseMove($event) (document:mouseup)=screen.mouseUp($event) (window:scroll)=background.scroll() >
+    <app-aop-screen [colorManagerService]="colorManagerService"  [solidSettings]="solidSettings" (mouseMove)=mouseEvent #screen></app-aop-screen>
+    <app-aop-color-selection [colorManagerService]="colorManagerService"></app-aop-color-selection>
+    <app-aop-pattern [colorManagerService]="colorManagerService"></app-aop-pattern>
+    <app-aop-settings [solidSettings]="solidSettings"></app-aop-settings>
+  </div>
+  <div id="filter"></div>
+</app-aop-background>
